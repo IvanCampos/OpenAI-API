@@ -45,24 +45,17 @@ button {
 }
 
 button[name="run"] {
-    animation: tron-pulse 370ms 21;
-    animation: pink-glow-text 3s ease-in-out infinite alternate;
+    animation: white-glow 2.37s ease-in-out infinite alternate;
 }
 
-@-webkit-keyframes pink-glow-text {
+@-webkit-keyframes white-glow {
     from {
-        box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff, 0 0 5px #fff, 0 0 6px #fff;
+        box-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff, 0 0 5px #fff;
     }
 
     to {
-        box-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #fff, 0 0 10px #fff;
+        box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #fff, 0 0 10px #fff;
     }
-}
-
-@keyframes tron-pulse {
-    0% { background-color: #29bbea; }
-    50% { background-color: #0ef8f8; }
-    100% { background-color: #29bbea; }
 }
 
 button[name="clear"] {
@@ -99,9 +92,13 @@ span[name="lights"] {
 }
 
 span[name="example"] {
-    color: #F2A900;
     cursor: pointer;
+    color: white;
     padding-right: 1em;
+}
+
+#prompt {
+    white-space: pre-wrap;
 }
 
 .textarea {
@@ -119,7 +116,7 @@ span[name="example"] {
 }
 
 .textarea[contenteditable]:empty::before {
-    content: "Enter prompt for AI";
+    content: "Enter prompt for AI or click on an emoji example above";
     color: gray;
 }
 
@@ -134,13 +131,13 @@ span[name="counter"] {
 }
 
 #charCount {
-    font-size: 1.5em;
+    font-size: 1.25em;
     font-weight: bold;
     color: white;
 }
 
 #characters {
-    font-size: 1em;
+    font-size: 0.75em;
     color: white;
 }
 

@@ -1,10 +1,11 @@
+//TODO 1: GET YOUR OPENAI API KEY from https://beta.openai.com/account/api-keys
 
-//TODO 1a: RUN THE FOLLOWING COMMAND IN YOUR DEVELOPER CONSOLE FIRST
-//localStorage.setItem("openAI", "YOUR_API_KEY");
+//TODO 2a: RUN THE FOLLOWING COMMAND IN YOUR DEVELOPER CONSOLE FIRST:
+//         localStorage.setItem("openAI", "YOUR_OPENAI_API_KEY");
 const API_KEY = localStorage.getItem("openAI");
 
-//TODO 1b: OPTIONALLY, YOU CAN DELETE THE PREVIOUS LINE AND HARD-CODE YOUR API KEY WITH:
-//const API_KEY = "YOUR_API_KEY";
+//TODO 2b: OPTIONALLY, YOU CAN DELETE THE PREVIOUS LINE AND HARD-CODE YOUR API KEY WITH:
+//const API_KEY = "YOUR_OPENAI_API_KEY";
 
 const MIN_CHARS = 0;
 let promptSpan, charSpan;
@@ -121,10 +122,11 @@ async function openAI_API_Completions() {
 
 //SET TOP EXAMPLES
 const TOP_EXAMPLES = [
-    'Bitcoin is bad because it is used by bad people and has no intrinsic value. It is also bad for the environment.',
-    'I honestly have no respect for posers who use AI and act like they are some sort of artists and go on to make money off. AI is cool visually but all of you here can attest to the feeling drawing feels like on paper, canvas, tablet or any other medium. Da Vinci and the art masters must be turning in their graves',
-    'Instagram makes people depressed & Twitter makes people angry. Which is better?',
-    'AI tech like ChatGPT can be used by bad actors to lobby within democracies at incredible speed and scope, costing far less than troll farms like Russia\'s IRA',
+    'Convert movie titles into emoji.\r\nBack to the Future: 👨👴🚗🕒 \r\nBatman: 🤵🦇 \r\nTransformers: 🚗🤖 \r\nStar Wars:',
+    'Decide whether a Tweet\'s sentiment is positive, neutral, or negative\r\nTweet: "I loved the new Batman movie!"\r\nSentiment:',
+    'Translate the following into Spanish:\r\nIs Artificial Intelligence the Future?',
+    'Correct this to standard English:\r\nI be not wantin any satisfaction',
+    'The OpenAI API can be applied to virtually any task that involves understanding or generating natural language or code. We offer a spectrum of models with different levels of power suitable for different tasks, as well as the ability to fine-tune your own custom models. These models can be used for everything from content generation to semantic search and classification.\r\nTl;dr',
 ];
 
 /*
@@ -137,6 +139,32 @@ function setExample(exampleIndex) {
     clearAll();
     document.getElementById('prompt').textContent = TOP_EXAMPLES[exampleIndex];
     countCharacters();
+}
+
+/*
+This code is creating an array of examples, each containing an emoji, a title, and an onclick function.
+It then uses a for loop to iterate through the examples array, creating a new "span" element for each example,
+setting the "name", "title", and "onclick" attributes, and setting the innerHTML to the example's emoji.
+The newly created span elements are then appended to the element with the id "topExamples".
+This will create a list of clickable emojis with title and onclick function that are associated with the element with the id "topExamples".
+ */
+const topExamples = document.getElementById("topExamples");
+
+var examples = [
+    { emoji: "&#127916;", title: "Movie to Emoji", onclick: "setExample(0)" },
+    { emoji: "&#128566;", title: "Tweet Sentiment", onclick: "setExample(1)" },
+    { emoji: "&#128483;", title: "Spanish Translator", onclick: "setExample(2)" },
+    { emoji: "&#127891;", title: "Grammar Check", onclick: "setExample(3)" },
+    { emoji: "&#9986;", title: "TL;DR", onclick: "setExample(4)" }
+];
+
+for (var i = 0; i < examples.length; i++) {
+    var example = document.createElement("span");
+    example.setAttribute("name", "example");
+    example.setAttribute("title", examples[i].title);
+    example.setAttribute("onclick", examples[i].onclick);
+    example.innerHTML = examples[i].emoji;
+    topExamples.appendChild(example);
 }
 
 /*
@@ -321,17 +349,17 @@ function convertEpochToDateTime(epoch) {
 
 /*
 This function is used to determine the text color of the time based on the current time of the day.
-It creates a variable "color" and sets it to "white".
+It creates a variable "color" and sets it to "dark".
 Then it creates a new Date object and uses the getHours method to get the current hour.
-Then it checks if the current hour is between 6am and 7pm (inclusive) and sets the color variable to "black" if true.
-Finally, it returns the color variable, which will be "white" if it's nighttime, and "black" if it's daytime.
+Then it checks if the current hour is between 6am and 7pm (inclusive) and sets the color variable to "light" if true.
+Finally, it returns the color variable, which will be "dark" if it's nighttime, and "light" if it's daytime.
 This function is typically used to set the text color of the time on the page to be easily readable against the background color.
  */
 function getTimeColor() {
-    let color = "white";
+    let color = "dark";
     var currentTime = new Date().getHours();
     if (6 <= currentTime && currentTime < 19) {
-        color = "black";
+        color = "light";
     }
 
     return color;
@@ -349,10 +377,26 @@ function getStylesheet() {
     const CSS_LIGHT = "<link id='lightCSS' rel='stylesheet' href='./light.css' type='text/css'>";
     const CSS_DARK = "<link id='darkCSS' rel='stylesheet' href='./dark.css' type='text/css'>";
     let timeColor = getTimeColor();
-    if (timeColor === "black") {
+    if (timeColor === "light") {
         document.write(CSS_LIGHT);
     } else {
         document.write(CSS_DARK);
+    }
+    setGitHubImage(timeColor);
+}
+
+/*
+This function takes in a parameter "timeColor" and uses it to determine the source of the image for the HTML element with the ID "gh-img".
+If "timeColor" is equal to "dark", the source of the image is set to "../images/github-mark-white.png", and if it's not, the source is set to "../images/github-mark.png".
+This function is likely used to switch the image source depending on the time of day or user preferences.
+ */
+function setGitHubImage(timeColor) {
+    let ghImg = document.getElementById("gh-img");
+    ghImg.src = "";
+    if (timeColor === "dark") {
+        ghImg.src = "../images/github-mark-white.png";
+    } else {
+        ghImg.src = "../images/github-mark.png";
     }
 }
 
@@ -361,20 +405,24 @@ This function is used to switch between the light and dark stylesheets based on 
 It first checks if the darkCSS element exists in the document using the getElementById method and assigns the result to the variable "darkCSS", and then check if the lightCSS element exists in the document using the getElementById method and assigns the result to the variable "lightCSS".
 If darkCSS variable is null, it means that the dark stylesheet is not currently being used, so it removes the light stylesheet link element and sets the new stylesheet link with the id "darkCSS" and path "./dark.css" using the setSheet function.
 If lightCSS variable is null, it means that the light stylesheet is not currently being used, so it removes the dark stylesheet link element and sets the new stylesheet link with the id "lightCSS" and path "./light.css" using the setSheet function.
+Next, we call setGitHubImage() to set the src attribute of the GitHub logo image based on time of day.
 Finally, it calls the countCharacters() function to update the characters count.
 This function is typically used when the user wants to switch between the light and dark themes manually.
  */
 function switchStylesheet() {
     let darkCSS = document.getElementById("darkCSS");
     let lightCSS = document.getElementById("lightCSS");
+    let newColor = "light";
 
     if (darkCSS == null) {
         document.getElementById("lightCSS").remove();
         setSheet("darkCSS", "./dark.css");
+        newColor = "dark";
     } else if (lightCSS == null) {
         document.getElementById("darkCSS").remove();
         setSheet("lightCSS", "./light.css");
     }
+    setGitHubImage(newColor);
     countCharacters();
 }
 

@@ -44,6 +44,16 @@ button {
     cursor: pointer;
 }
 
+button[name="run"] {
+    animation: tri-pulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes tri-pulse {
+    0% { background-color: #ec5c13; }
+    50% { background-color: #f37135; }
+    100% { background-color: #ec5c13; }
+}
+
 button[name="clear"] {
     font-family: inherit;
     background-color: #fffff0;
@@ -78,8 +88,13 @@ span[name="lights"] {
 }
 
 span[name="example"] {
-    color: #29bbea;
     cursor: pointer;
+    color: #1d1d1d;
+    padding-right: 1em;
+}
+
+#prompt {
+    white-space: pre-wrap;
 }
 
 .textarea {
@@ -97,7 +112,7 @@ span[name="example"] {
 }
 
 .textarea[contenteditable]:empty::before {
-    content: "Enter prompt for AI";
+    content: "Enter prompt for AI or click on an emoji example above";
     color: gray;
 }
 
@@ -112,13 +127,13 @@ span[name="counter"] {
 }
 
 #charCount {
-    font-size: 1.5em;
+    font-size: 1.25em;
     font-weight: bold;
     color: black;
 }
 
 #characters {
-    font-size: 1em;
+    font-size: 0.75em;
     color: black;
 }
 
