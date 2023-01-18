@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //TODO FIRST: RUN THE FOLLOWING COMMAND IN YOUR DEVELOPER CONSOLE FIRST
 //localStorage.setItem("openAI", "YOUR_API_KEY");
-const API_KEY = localStorage.getItem("openAI8");
+const API_KEY = localStorage.getItem("openAI");
 
 //TODO FIRST: OPTIONALLY, YOU CAN REPLACE THE PREVIOUS LINE AND HARD-CODE YOUR API KEY WITH:
 //const API_KEY = "YOUR_API_KEY";
