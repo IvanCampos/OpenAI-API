@@ -207,6 +207,9 @@ This function is typically used to create a typing effect on the page and can be
  */
 async function typeSentence(sentence, elementReference, data, isReceipt = false) {
     elementReference.innerText = "";
+    if (sentence === "HTTP ERROR: 401") {
+        sentence += " — Please make sure that your Open AI API Key has been set properly.";
+    }
     const letters = sentence.split("");
     let delay = 30;
     let i = 0;
