@@ -39,6 +39,7 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 1em;
+    margin: 2px 1px;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -46,7 +47,6 @@ button {
 button[name="clear"] {
     font-family: inherit;
     background-color: white;
-    text-decoration: underline;
     border: none;
     color: black;
     padding: 10px;
@@ -54,11 +54,13 @@ button[name="clear"] {
     text-decoration: none;
     display: inline-block;
     font-size: 1em;
+    margin: 2px 1px;
     border-radius: 4px;
 }
 
 select {
-    color: white;
+    color: black;
+    font-size: 0.9em;
 }
 
 select, table {
@@ -153,7 +155,8 @@ span[name="counter"] {
 
 #response {
     margin-top: 1em;
-    color: #008F11;
+    line-height: 30px;
+    color: #00FF41;
 }
 
 #receipt {

@@ -108,6 +108,7 @@ span[name="counter"] {
 
 #counter {
     margin-bottom: 0.75em;
+    color: white;
 }
 
 #charCount {
