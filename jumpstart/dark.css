@@ -1,3 +1,12 @@
+/*
+DARK MODE CSS
+This css code imports the google font 'Orbitron' for the font-family of the html element.
+It sets the max width of the html element to 70 characters, sets the margin and padding for the html element,
+sets the line-height and font-size of the html element, and sets the background-color of the html element to white.
+It also styles various other elements such as headings, paragraphs, unordered lists, ordered lists, buttons,
+select elements, tables, span elements, #counter, #header, and #response, and #receipt.
+It also positions the #header element as sticky and sets the width and text-align of the child elements of the .headerContainer class.
+ */
 @import url('https://fonts.googleapis.com/css?family=Orbitron');
 html {
     font-family: "Orbitron";
