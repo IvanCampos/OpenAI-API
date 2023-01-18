@@ -15,7 +15,7 @@ html {
     margin: auto;
     line-height: 1;
     font-size: 1.25em;
-    background-color: white;
+    background-color: #fffff0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -31,7 +31,7 @@ p, ul, ol {
 
 button {
     font-family: inherit;
-    background-color: #04AA6D;
+    background-color: #ec5c13;
     border: none;
     color: black;
     padding: 10px;
@@ -46,7 +46,7 @@ button {
 
 button[name="clear"] {
     font-family: inherit;
-    background-color: white;
+    background-color: #fffff0;
     border: none;
     color: black;
     padding: 10px;
@@ -66,7 +66,7 @@ select {
 select, table {
     margin-bottom: 1em;
     font-family: inherit;
-    background-color: #29bbea;
+    background-color: #ec5c13;
 }
 
 table {
@@ -85,7 +85,7 @@ span[name="example"] {
 .textarea {
     border: 1px solid #ccc;
     font-family: inherit;
-    color: black;
+    color: #474747;
     font-size: inherit;
     padding: 1px 6px;
     display: block;
@@ -156,10 +156,10 @@ span[name="counter"] {
 #response {
     margin-top: 1em;
     line-height: 30px;
-    color: #00FF41;
+    color: #474747;
 }
 
 #receipt {
     margin-top: 1em;
-    color: black;
+    color: #cc1d1d;
 }

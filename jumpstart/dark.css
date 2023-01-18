@@ -31,9 +31,9 @@ p, ul, ol {
 
 button {
     font-family: inherit;
-    background-color: #04AA6D;
+    background-color: #0ef8f8;
     border: none;
-    color: white;
+    color: #0C141F;
     padding: 10px;
     text-align: center;
     text-decoration: none;
@@ -42,6 +42,27 @@ button {
     margin: 2px 1px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+button[name="run"] {
+    animation: tron-pulse 370ms 21;
+    animation: pink-glow-text 3s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes pink-glow-text {
+    from {
+        box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff, 0 0 5px #fff, 0 0 6px #fff;
+    }
+
+    to {
+        box-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #fff, 0 0 10px #fff;
+    }
+}
+
+@keyframes tron-pulse {
+    0% { background-color: #29bbea; }
+    50% { background-color: #0ef8f8; }
+    100% { background-color: #29bbea; }
 }
 
 button[name="clear"] {
@@ -59,14 +80,14 @@ button[name="clear"] {
 }
 
 select {
-    color: black;
+    color: #0C141F;
     font-size: 0.9em;
 }
 
 select, table {
     margin-bottom: 1em;
     font-family: inherit;
-    background-color: #29bbea;
+    background-color: #0ef8f8;
 }
 
 table {
@@ -78,8 +99,9 @@ span[name="lights"] {
 }
 
 span[name="example"] {
-    color: #29bbea;
+    color: #F2A900;
     cursor: pointer;
+    padding-right: 1em;
 }
 
 .textarea {
@@ -161,5 +183,5 @@ span[name="counter"] {
 
 #receipt {
     margin-top: 1em;
-    color: white;
+    color: #7c7c84;
 }
