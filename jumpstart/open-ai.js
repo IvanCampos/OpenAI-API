@@ -1,3 +1,11 @@
+
+//TODO 1a: RUN THE FOLLOWING COMMAND IN YOUR DEVELOPER CONSOLE FIRST
+//localStorage.setItem("openAI", "YOUR_API_KEY");
+const API_KEY = localStorage.getItem("openAI");
+
+//TODO 1b: OPTIONALLY, YOU CAN DELETE THE PREVIOUS LINE AND HARD-CODE YOUR API KEY WITH:
+//const API_KEY = "YOUR_API_KEY";
+
 const MIN_CHARS = 0;
 let promptSpan, charSpan;
 
@@ -31,13 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
         enginesList.value = localStorage.getItem(OPENAI_API_ENGINE);
     }
 });
-
-//TODO FIRST: RUN THE FOLLOWING COMMAND IN YOUR DEVELOPER CONSOLE FIRST
-//localStorage.setItem("openAI", "YOUR_API_KEY");
-const API_KEY = localStorage.getItem("openAI");
-
-//TODO FIRST: OPTIONALLY, YOU CAN REPLACE THE PREVIOUS LINE AND HARD-CODE YOUR API KEY WITH:
-//const API_KEY = "YOUR_API_KEY";
 
 /*
 This function is counting the number of characters entered in the "promptSpan" element,
