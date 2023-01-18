@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OpenAI API Jumpstart</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="dark.css">
+</head>
+<body>
+
+<div id="header">
+    <div class="headerContainer">
+        <div class="headerElementLeft">
+            <span name="lights" title="Light/Dark Mode" onclick="switchStylesheet()">&#128293;</span>
+        </div>
+        <div class="headerElementCenter">
+            <div>
+                <!-- Top Examples -->
+                <span name="example" title="Bitcoin Example Prompt" onclick="setExample(0)">&#x20BF;</span>
+                <span name="example" title="AI Art Example Prompt" onclick="setExample(1)">&#x1F916;</span>
+                <span name="example" title="Elon Musk Example Prompt" onclick="setExample(2)">&#x1F50C;</span>
+                <span name="example" title="NYT Example Prompt" onclick="setExample(3)">&#x1F4F0;</span>
+            </div>
+        </div>
+        <div class="headerElementRight" style="text-align: right">
+            <a href="https://github.com/IvanCampos/OpenAI-API" target="_blank">
+                <img height="25px" width="25px" src="../images/github-mark.png" title="Source Code"/>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- GPT-3 Model Select Box -->
+<select id="engines">
+    <option value="text-davinci-003">text-davinci-003 ($.02 per 750 words)</option>
+    <option value="text-curie-001">text-curie-001 ($.002 per 750 words)</option>
+    <option value="text-babbage-001">text-babbage-001 ($.0005 per 750 words)</option>
+    <option value="text-ada-001">text-ada-001 ($.0004 per 750 words)</option>
+</select>
+
+<!-- Prompt Box -->
+<span id="prompt" class="textarea" role="textbox" contenteditable></span>
+
+<!-- Character Counter -->
+<div id="counter">
+    <span name="counter" id="charCount"></span>
+    <span name="counter" id="characters">characters</span>
+</div>
+
+<!-- Action Buttons -->
+<button onclick="openAI_API_Completions();">RUN AI</button>
+<button name="clear" onclick="clearAll()">CLEAR ALL</button>
+
+<!-- OpenAI API Response -->
+<div id="response" class="typing"></div>
+
+<!-- Pricing Receipt -->
+<div id="receipt"></div>
+
+<!-- JavaScript File -->
+<script src="open-ai.js"></script>
+
+</body>
+</html>
