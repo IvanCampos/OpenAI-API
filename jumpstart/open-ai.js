@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //TODO FIRST: RUN THE FOLLOWING COMMAND IN YOUR DEVELOPER CONSOLE FIRST
 //localStorage.setItem("openAI", "YOUR_API_KEY");
-const API_KEY = localStorage.getItem("openAI");
+const API_KEY = localStorage.getItem("openAI8");
 
 //TODO FIRST: OPTIONALLY, YOU CAN REPLACE THE PREVIOUS LINE AND HARD-CODE YOUR API KEY WITH:
 //const API_KEY = "YOUR_API_KEY";
@@ -79,36 +79,42 @@ If an error occurs, it logs the error.
 If either prompt or engine is empty or whitespace, it types a message asking the user to enter a prompt and select an engine on the response element.
  */
 async function openAI_API_Completions() {
+    //Cache DOM elements to avoid unnecessary DOM traversals
+    let promptElem = document.getElementById('prompt');
+    let engineElem = document.getElementById("engines");
+    let responseElem = document.getElementById("response");
     clearResponseAndReceipt();
-    let promptText = document.getElementById('prompt').textContent;
-    let engine = document.getElementById("engines").value;
+    let promptText = promptElem.textContent.trim();
+    let engine = engineElem.value.trim();
 
-    if (promptText.trim().length > 0 && engine.trim().length > 0) {
-        await fetch('https://api.openai.com/v1/completions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + API_KEY
-            },
-            body: JSON.stringify({
-                'model': engine,
-                'prompt': promptText,
-                'temperature': 0,
-                'max_tokens': 1000
-            })
-        }).then(response => {
+    if (promptText && engine) {
+        try {
+            const response = await fetch('https://api.openai.com/v1/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + API_KEY
+                },
+                body: JSON.stringify({
+                    'model': engine,
+                    'prompt': promptText,
+                    'temperature': 0,
+                    'max_tokens': 1000
+                })
+            });
+
             if (!response.ok) {
-                console.log("not: " + response.status + "..." + response.statusText);
-                typeSentence("HTTP ERROR: " + response.status, document.getElementById("response"));
+                console.error("HTTP ERROR: " + response.status + "\n" + response.statusText);
+                typeSentence("HTTP ERROR: " + response.status, responseElem);
+            } else {
+                const data = await response.json();
+                typeSentence(createResponse(data), responseElem, data, true);
             }
-            return response.json();
-        }).then(data => {
-            typeSentence(createResponse(data), document.getElementById("response"), data, true);
-        }).catch(error => {
-            console.log("Error: " + error);
-        });
+        } catch (error) {
+            console.error("ERROR: " + error);
+        }
     } else {
-        await typeSentence("Please enter a prompt and select an engine", document.getElementById("response"));
+        await typeSentence("Please enter a prompt and select an engine", responseElem);
     }
 }
 
