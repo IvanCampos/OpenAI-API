@@ -1,4 +1,5 @@
 # OpenAI API JavaScript Jumpstart
+The OpenAI API JavaScript Jumpstart provides an introduction to using the OpenAI API with JavaScript. It includes instructions for setting up an API key, making requests to the API, and working with the API's response data in JavaScript. The goal of the jumpstart is to help developers quickly get started using the OpenAI API in their JavaScript projects.
 
 ![](https://cdn-images-1.medium.com/max/1600/0*pEHsXwTQ8hKkrQBV.gif)
 
