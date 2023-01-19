@@ -1,4 +1,6 @@
-# OpenAI API JavaScript 101
+# OpenAI API JavaScript Jumpstart
+
+![](https://cdn-images-1.medium.com/max/1600/0*pEHsXwTQ8hKkrQBV.gif)
 
 ## Why?
 * Entry level skeleton
@@ -18,6 +20,9 @@
 * Run immediately on GitHub Pages 
   * with localStorage option
 * Just fork and hack the code locally
+
+
+![](https://cdn-images-1.medium.com/max/1600/0*bJe_0S_W7NbyROry.gif)
 
 ## Base Features
 * Call the OpenAI API
