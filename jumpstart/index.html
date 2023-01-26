@@ -20,7 +20,10 @@ The anchor element links to the project source code on GitHub, and the image is 
 <div id="header">
     <div class="headerContainer">
         <div class="headerElementLeft">
-            <span name="lights" title="Light/Dark Mode" onclick="switchStylesheet()">&#128293;</span>
+            <span name="lights" title="Light/Dark Mode">
+                <!-- Image source is set via openai-api.js -->
+                <img id="logo" onclick="switchStylesheet()" height="21px" width="100px" title="Sopmac AI" />
+            </span>
         </div>
         <div class="headerElementCenter">
             <div id="topExamples">

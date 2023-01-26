@@ -285,10 +285,11 @@ function createReceipt(json) {
     table += "</table>";
     return table;*/
 
+    let model = json.model;
     let promptTokens = json.usage.prompt_tokens;
     let completionTokens = json.usage.completion_tokens;
     let totalTokens = json.usage.total_tokens;
-    return "<hr/><div style='font-family: Poppins; font-weight: bolder;'>RECEIPT</div><br/><div style='font-family: Poppins;'>Prompt Tokens: <span style='font-family: Orbitron'>" + promptTokens +
+    return "<hr/><div style='font-family: Poppins; font-weight: bolder;'>RECEIPT</div><br/><div>" + model + "</div><br/><div style='font-family: Poppins;'>Prompt Tokens: <span style='font-family: Orbitron'>" + promptTokens +
         "</span></div><br/><div style='text-decoration: underline; font-family: Poppins;'>+ Completion Tokens: <span style='font-family: Orbitron'>" + completionTokens +
         "</span></div><br/><div style='font-family: Poppins'>Total Tokens: <span style='font-family: Orbitron'>" + totalTokens +
         "</span></div><br/>$" + calculateCost(json.model, totalTokens);
@@ -388,7 +389,7 @@ function getStylesheet() {
     } else {
         document.write(CSS_DARK);
     }
-    setGitHubImage(timeColor);
+    setGitHubImageAndLogo(timeColor);
 }
 
 /*
@@ -396,13 +397,16 @@ This function takes in a parameter "timeColor" and uses it to determine the sour
 If "timeColor" is equal to "dark", the source of the image is set to "../images/github-mark-white.png", and if it's not, the source is set to "../images/github-mark.png".
 This function is likely used to switch the image source depending on the time of day or user preferences.
  */
-function setGitHubImage(timeColor) {
+function setGitHubImageAndLogo(timeColor) {
     let ghImg = document.getElementById("gh-img");
+    let logoImg = document.getElementById("logo");
     ghImg.src = "";
     if (timeColor === "dark") {
         ghImg.src = "../images/github-mark-white.png";
+        logoImg.src = "../images/sopmac-ai-white.png";
     } else {
         ghImg.src = "../images/github-mark.png";
+        logoImg.src = "../images/sopmac-ai-black.png";
     }
 }
 
@@ -411,7 +415,7 @@ This function is used to switch between the light and dark stylesheets based on 
 It first checks if the darkCSS element exists in the document using the getElementById method and assigns the result to the variable "darkCSS", and then check if the lightCSS element exists in the document using the getElementById method and assigns the result to the variable "lightCSS".
 If darkCSS variable is null, it means that the dark stylesheet is not currently being used, so it removes the light stylesheet link element and sets the new stylesheet link with the id "darkCSS" and path "./dark.css" using the setSheet function.
 If lightCSS variable is null, it means that the light stylesheet is not currently being used, so it removes the dark stylesheet link element and sets the new stylesheet link with the id "lightCSS" and path "./light.css" using the setSheet function.
-Next, we call setGitHubImage() to set the src attribute of the GitHub logo image based on time of day.
+Next, we call setGitHubImageAndLogo() to set the src attribute of the GitHub logo image based on time of day.
 Finally, it calls the countCharacters() function to update the characters count.
 This function is typically used when the user wants to switch between the light and dark themes manually.
  */
@@ -428,7 +432,7 @@ function switchStylesheet() {
         document.getElementById("darkCSS").remove();
         setSheet("lightCSS", "./light.css");
     }
-    setGitHubImage(newColor);
+    setGitHubImageAndLogo(newColor);
     countCharacters();
 }
 

@@ -181,7 +181,7 @@ span[name="counter"] {
     margin-top: 1em;
     font-size: 1.25em;
     line-height: 30px;
-    color: #00FF41;
+    color: white;
 }
 
 #receipt {
@@ -190,4 +190,8 @@ span[name="counter"] {
     font-size: 0.9em;
     text-align: right;
     font-family: "Orbitron";
+}
+
+#logo {
+    cursor: pointer;
 }

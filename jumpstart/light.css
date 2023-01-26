@@ -185,3 +185,7 @@ span[name="counter"] {
     text-align: right;
     font-family: "Orbitron";
 }
+
+#logo {
+    cursor: pointer;
+}
