@@ -8,8 +8,9 @@ select elements, tables, span elements, #counter, #header, and #response, and #r
 It also positions the #header element as sticky and sets the width and text-align of the child elements of the .headerContainer class.
  */
 @import url('https://fonts.googleapis.com/css?family=Orbitron');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 html {
-    font-family: "Orbitron";
+    font-family: "Poppins";
     max-width: 70ch;
     padding: 1em;
     margin: auto;
@@ -26,11 +27,11 @@ h1, h2, h3, h4, h5, h6 {
 p, ul, ol {
     margin-bottom: 1em;
     color: #1d1d1d;
-    font-family: inherit;
+    font-family: "Poppins";
 }
 
 button {
-    font-family: inherit;
+    font-family: "Poppins";
     background-color: #ec5c13;
     border: none;
     color: black;
@@ -45,6 +46,7 @@ button {
 }
 
 button[name="run"] {
+    font-family: "Poppins";
     animation: tri-pulse 3s ease-in-out infinite alternate;
 }
 
@@ -55,7 +57,7 @@ button[name="run"] {
 }
 
 button[name="clear"] {
-    font-family: inherit;
+    font-family: "Poppins";
     background-color: #fffff0;
     border: none;
     color: black;
@@ -75,7 +77,7 @@ select {
 
 select, table {
     margin-bottom: 1em;
-    font-family: inherit;
+    font-family: "Poppins";
     background-color: #ec5c13;
 }
 
@@ -99,7 +101,7 @@ span[name="example"] {
 
 .textarea {
     border: 1px solid #ccc;
-    font-family: inherit;
+    font-family: "Poppins";
     color: #474747;
     font-size: inherit;
     padding: 1px 6px;
@@ -117,7 +119,7 @@ span[name="example"] {
 }
 
 span[name="counter"] {
-    font-family: inherit;
+    font-family: "Orbitron";
     color: black;
 }
 
@@ -176,5 +178,7 @@ span[name="counter"] {
 
 #receipt {
     margin-top: 1em;
-    color: #cc1d1d;
+    color: black;
+    font-size: 0.9em;
+    font-family: "Orbitron";
 }
