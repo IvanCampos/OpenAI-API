@@ -135,6 +135,7 @@ span[name="counter"] {
 }
 
 #characters {
+    font-family: Poppins;
     font-size: 0.75em;
     color: black;
 }
@@ -172,13 +173,15 @@ span[name="counter"] {
 
 #response {
     margin-top: 1em;
+    font-size: 1.25em;
     line-height: 30px;
     color: #474747;
 }
 
 #receipt {
     margin-top: 1em;
-    color: black;
+    color: #1d1d1d;
     font-size: 0.9em;
+    text-align: right;
     font-family: "Orbitron";
 }
