@@ -39,6 +39,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (localStorage.getItem(OPENAI_API_ENGINE)) {
         enginesList.value = localStorage.getItem(OPENAI_API_ENGINE);
     }
+
+    typeSentence("🤖 Hello, how can I help? 🤖", promptSpan, '', false, 100)
+        .then(afterTyping => promptSpan.innerHTML = "");
+
 });
 
 /*
@@ -101,7 +105,10 @@ async function openAI_API_Completions() {
                     'model': engine,
                     'prompt': promptText,
                     'temperature': 0,
-                    'max_tokens': 1000
+                    'max_tokens': 200,
+                    'top_p': 1,
+                    'frequency_penalty': 1.2,
+                    'presence_penalty': 0
                 })
             });
 
@@ -235,13 +242,13 @@ Within the loop, it waits for a specified delay (30ms) and then appends the curr
 Once the loop completes, if the isReceipt is set to true, it calls the createReceipt() function with the data passed as an argument to create a receipt and updates the innerHTML of the element with the id "receipt".
 This function is typically used to create a typing effect on the page and can be used to type out both the response and receipt.
  */
-async function typeSentence(sentence, elementReference, data, isReceipt = false) {
+async function typeSentence(sentence, elementReference, data, isReceipt = false, delay = 30) {
     elementReference.innerText = "";
     if (sentence === "HTTP ERROR: 401") {
         sentence += " — Please make sure that your Open AI API Key has been set properly.";
     }
     const letters = sentence.split("");
-    let delay = 30;
+    //let delay = 30;
     let i = 0;
     while (i < letters.length) {
         await waitForMs(delay);
@@ -327,6 +334,7 @@ function calculateCost(engineName, totalTokens, wordCount = false) {
     const CURIE_PRICE = 0.002;
     const BABBAGE_PRICE = 0.0005;
     const ADA_PRICE = 0.0004;
+    const CODEX_PRICE = 0;
 
     let pricePerToken = totalTokens / 1000;
     if (engineName === "text-davinci-003") {
@@ -337,6 +345,8 @@ function calculateCost(engineName, totalTokens, wordCount = false) {
         totalCost = BABBAGE_PRICE * pricePerToken;
     } else if (engineName === "text-ada-001") {
         totalCost = ADA_PRICE * pricePerToken;
+    } else if (engineName === "code-davinci-002") {
+        totalCost = CODEX_PRICE * pricePerToken;
     }
 
     return totalCost.toFixed(10);
