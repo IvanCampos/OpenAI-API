@@ -15,7 +15,7 @@ html {
     padding: 1em;
     margin: auto;
     line-height: 1;
-    font-size: 1.25em;
+    font-size: 1em;
     background-color: #1d1d1d;
 }
 
@@ -107,13 +107,13 @@ span[name="example"] {
     border: 1px solid #ccc;
     font-family: "Poppins";
     color: white;
-    font-size: inherit;
+    font-size: initial;
     padding: 1px 6px;
     display: block;
     width: 98%;
     overflow: hidden;
     resize: both;
-    min-height: 100px;
+    min-height: 110px;
     line-height: 30px;
 }
 
@@ -178,7 +178,7 @@ span[name="counter"] {
 
 #response {
     margin-top: 1em;
-    font-size: 1.25em;
+    font-size: initial;
     line-height: 30px;
     color: white;
 }

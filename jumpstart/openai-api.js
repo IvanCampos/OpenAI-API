@@ -105,7 +105,7 @@ async function openAI_API_Completions() {
                     'model': engine,
                     'prompt': promptText,
                     'temperature': 0,
-                    'max_tokens': 200,
+                    'max_tokens': 1000,
                     'top_p': 1,
                     'frequency_penalty': 1.2,
                     'presence_penalty': 0
