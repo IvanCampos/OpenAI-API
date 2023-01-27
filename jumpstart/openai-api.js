@@ -289,9 +289,7 @@ function createReceipt(json) {
     let promptTokens = json.usage.prompt_tokens;
     let completionTokens = json.usage.completion_tokens;
     let totalTokens = json.usage.total_tokens;
-    return "<hr/><div style='font-family: Poppins; font-weight: bolder;'>RECEIPT</div><br/><div>" + model + "</div><br/><div style='font-family: Poppins;'>Prompt Tokens: <span style='font-family: Orbitron'>" + promptTokens +
-        "</span></div><br/><div style='text-decoration: underline; font-family: Poppins;'>+ Completion Tokens: <span style='font-family: Orbitron'>" + completionTokens +
-        "</span></div><br/><div style='font-family: Poppins'>Total Tokens: <span style='font-family: Orbitron'>" + totalTokens +
+    return "<hr/><div><span>" + model + " </span><span style='font-family: Poppins; font-weight: bolder;'>RECEIPT</span></div><br/><div style='font-family: Poppins'>Total Tokens: <span style='font-family: Orbitron'>" + totalTokens +
         "</span></div><br/>$" + calculateCost(json.model, totalTokens);
 }
 

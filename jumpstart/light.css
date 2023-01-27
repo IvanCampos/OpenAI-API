@@ -109,7 +109,7 @@ span[name="example"] {
     width: 98%;
     overflow: hidden;
     resize: both;
-    min-height: 80px;
+    min-height: 100px;
     line-height: 30px;
 }
 
