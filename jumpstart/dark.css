@@ -75,14 +75,13 @@ button[name="clear"] {
 }
 
 select {
-    font-family: "Poppins";
     color: #0C141F;
     font-size: 0.9em;
 }
 
 select, table {
     margin-bottom: 1em;
-    font-family: "Poppins";
+    font-family: "Orbitron";
     background-color: #0ef8f8;
 }
 
