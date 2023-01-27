@@ -150,6 +150,7 @@ This will create a list of clickable emojis with title and onclick function that
  */
 const topExamples = document.getElementById("topExamples");
 
+/*
 var examples = [
     { emoji: "&#127916;", title: "Movie to Emoji", onclick: "setExample(0)" },
     { emoji: "&#128566;", title: "Tweet Sentiment", onclick: "setExample(1)" },
@@ -166,6 +167,7 @@ for (var i = 0; i < examples.length; i++) {
     example.innerHTML = examples[i].emoji;
     topExamples.appendChild(example);
 }
+*/
 
 /*
 This function is clearing all the data on the page, it first clears the textContent of the 'prompt' element and sets it to an empty string.
