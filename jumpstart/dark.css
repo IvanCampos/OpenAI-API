@@ -16,7 +16,7 @@ html {
     margin: auto;
     line-height: 1;
     font-size: 1em;
-    background-color: #1d1d1d;
+    background-color: black;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -47,7 +47,7 @@ button {
 
 button[name="run"] {
     font-family: "Poppins";
-    animation: white-glow 2.37s ease-in-out infinite alternate;
+    /*animation: white-glow 2.37s ease-in-out infinite alternate;*/
 }
 
 @-webkit-keyframes white-glow {
@@ -62,7 +62,7 @@ button[name="run"] {
 
 button[name="clear"] {
     font-family: "Poppins";
-    background-color: #1d1d1d;
+    background-color: black;
     border: none;
     color: white;
     padding: 10px;
