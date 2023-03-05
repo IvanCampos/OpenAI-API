@@ -86,10 +86,12 @@ If either prompt or engine is empty or whitespace, it types a message asking the
  */
 async function chatGPT_API_Completions() {
     //Cache DOM elements to avoid unnecessary DOM traversals
+    let systemElem = document.getElementById('system');
     let promptElem = document.getElementById('prompt');
     let engineElem = document.getElementById("engines");
     let responseElem = document.getElementById("response");
     clearResponseAndReceipt();
+    let systemText = systemElem.textContent.trim();
     let promptText = promptElem.textContent.trim();
     let engine = engineElem.value.trim();
 
@@ -106,7 +108,7 @@ async function chatGPT_API_Completions() {
                     "messages": [
                         {
                             "role": "system",
-                            "content": "You are a helpful assistant"
+                            "content": systemText
                         },
                         {
                             "role": "user",

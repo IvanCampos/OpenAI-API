@@ -123,6 +123,27 @@ span[name="example"] {
     color: gray;
 }
 
+.systemText {
+    border: 1px solid #ccc;
+    font-family: "Poppins";
+    color: white;
+    font-size: initial;
+    padding: 1px 6px;
+    display: block;
+    width: 98%;
+    overflow: hidden;
+    resize: both;
+    min-height: 40px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+.systemText[contenteditable]:empty::before {
+    font-family: "Poppins";
+    content: "You are a helpful assistant";
+    color: gray;
+}
+
 span[name="counter"] {
     font-family: "Orbitron";
     color: white;
