@@ -26,15 +26,25 @@
     </div>
 </div>
 
-<span id="system" class="systemText" role="textbox" contenteditable></span>
+<div style="display:flex;">
+    <div class="counter">
+        <span>System: </span>
+        <span name="counterSystem" id="charCountSystem"></span>
+    </div>
+    <div class="counter">
+        <span>Assistant: </span>
+        <span name="counterAssistant" id="charCountAssistant"></span>
+    </div>
+    <div class="counter">
+        <span>User: </span>
+        <span name="counterUser" id="charCountUser"></span>
+    </div>
+</div>
 
-<span id="assistant" class="assistantText" role="textbox" contenteditable></span>
-
-<span id="user" class="textarea" role="textbox" contenteditable></span>
-
-<div id="counter">
-    <span name="counter" id="charCount"></span>
-    <span name="counter" id="characters">characters</span>
+<div style="display: flex;">
+    <span id="system" class="systemText" role="textbox" contenteditable></span>
+    <span id="assistant" class="assistantText" role="textbox" contenteditable></span>
+    <span id="user" class="textarea" role="textbox" contenteditable></span>
 </div>
 
 <button name="run" onclick="chatGPT_API_Completions();">ChatGPT</button>

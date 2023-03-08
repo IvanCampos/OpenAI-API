@@ -108,50 +108,46 @@ span[name="example"] {
     white-space: pre-wrap;
 }
 
-.textarea {
+.counter {
+    font-family: "Orbitron";
+    color: white;
+    font-size: initial;
+    padding: 1px 6px;
+    text-align: center;
+    display: block;
+    width: 30%;
+}
+
+.textarea, .systemText, .assistantText {
     border: 1px solid #ccc;
     font-family: "Poppins";
     color: white;
     font-size: initial;
     padding: 1px 6px;
     display: block;
-    width: 98%;
+    width: 33%;
     overflow: hidden;
     resize: both;
     min-height: 110px;
     line-height: 30px;
+    margin-bottom: 10px;
 }
 
 .textarea[contenteditable]:empty::before {
     font-family: "Poppins";
-    content: "User: Set the Instructions";
+    content: "Set the Instructions";
     color: gray;
-}
-
-.systemText, .assistantText {
-    border: 1px solid #ccc;
-    font-family: "Poppins";
-    color: white;
-    font-size: initial;
-    padding: 1px 6px;
-    display: block;
-    width: 98%;
-    overflow: hidden;
-    resize: both;
-    min-height: 40px;
-    line-height: 30px;
-    margin-bottom: 20px;
 }
 
 .systemText[contenteditable]:empty::before {
     font-family: "Poppins";
-    content: "System: Set the behavior";
+    content: "Set the behavior";
     color: gray;
 }
 
 .assistantText[contenteditable]:empty::before {
     font-family: "Poppins";
-    content: "Assistant: Provide examples";
+    content: "Provide examples";
     color: gray;
 }
 

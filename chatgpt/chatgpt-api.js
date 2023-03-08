@@ -15,17 +15,26 @@ getStylesheet();
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    userSpan = document.getElementById("user");
-    userSpan.addEventListener("input", countCharacters);
+    systemSpan = document.getElementById("system");
+    systemSpan.addEventListener("input", countCharactersSystem);
+    systemChar = document.getElementById("charCountSystem");
+    systemChar.innerText = MIN_CHARS.toString();
 
-    charSpan = document.getElementById("charCount");
-    charSpan.innerText = MIN_CHARS.toString();
+    assistantSpan = document.getElementById("assistant");
+    assistantSpan.addEventListener("input", countCharactersAssistant);
+    assistantChar = document.getElementById("charCountAssistant");
+    assistantChar.innerText = MIN_CHARS.toString();
+
+    userSpan = document.getElementById("user");
+    userSpan.addEventListener("input", countCharactersUser);
+    userChar = document.getElementById("charCountUser");
+    userChar.innerText = MIN_CHARS.toString();
 });
 
-function countCharacters() {
+function countCharactersSystem() {
     
-    let numOfCharsEntered = userSpan.innerText.length.toString();
-    let spans = document.querySelectorAll("span[name='counter']");
+    let numOfCharsEntered = systemSpan.innerText.length.toString();
+    let spans = document.querySelectorAll("span[name='counterSystem']");
     for (let i = 0; i < spans.length; i++) {
         let darkCSS = document.getElementById("darkCSS");
         if (darkCSS == null) {
@@ -34,7 +43,37 @@ function countCharacters() {
             spans[i].style.color = "white";
         }
     }
-    charSpan.innerText = numOfCharsEntered;
+    systemChar.innerText = numOfCharsEntered;
+}
+
+function countCharactersAssistant() {
+    
+    let numOfCharsEntered = assistantSpan.innerText.length.toString();
+    let spans = document.querySelectorAll("span[name='counterAssistant']");
+    for (let i = 0; i < spans.length; i++) {
+        let darkCSS = document.getElementById("darkCSS");
+        if (darkCSS == null) {
+            spans[i].style.color = "black";
+        } else {
+            spans[i].style.color = "white";
+        }
+    }
+    assistantChar.innerText = numOfCharsEntered;
+}
+
+function countCharactersUser() {
+    
+    let numOfCharsEntered = userSpan.innerText.length.toString();
+    let spans = document.querySelectorAll("span[name='counterUser']");
+    for (let i = 0; i < spans.length; i++) {
+        let darkCSS = document.getElementById("darkCSS");
+        if (darkCSS == null) {
+            spans[i].style.color = "black";
+        } else {
+            spans[i].style.color = "white";
+        }
+    }
+    userChar.innerText = numOfCharsEntered;
 }
 
 async function chatGPT_API_Completions() {
@@ -112,7 +151,9 @@ function clearAll() {
     document.getElementById('system').textContent = '';
     document.getElementById('assistant').textContent = '';
     document.getElementById('user').textContent = '';
-    countCharacters();
+    countCharactersSystem();
+    countCharactersAssistant();
+    countCharactersUser();
     clearResponseAndReceipt();
 }
 
