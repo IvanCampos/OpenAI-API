@@ -119,11 +119,11 @@ span[name="example"] {
 
 .textarea[contenteditable]:empty::before {
     font-family: "Poppins";
-    content: "Type your prompt HERE";
+    content: "User: Set the Instructions";
     color: gray;
 }
 
-.systemText {
+.systemText, .assistantText {
     border: 1px solid #ccc;
     font-family: "Poppins";
     color: white;
@@ -140,7 +140,13 @@ span[name="example"] {
 
 .systemText[contenteditable]:empty::before {
     font-family: "Poppins";
-    content: "You are a helpful assistant";
+    content: "System: Set the behavior";
+    color: gray;
+}
+
+.assistantText[contenteditable]:empty::before {
+    font-family: "Poppins";
+    content: "Assistant: Provide examples";
     color: gray;
 }
 
