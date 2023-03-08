@@ -30,6 +30,10 @@ p, ul, ol {
     font-family: "Poppins";
 }
 
+.name {
+    font-family: "Orbitron";
+}
+
 button {
     font-family: "Poppins";
     background-color: #ec5c13;
