@@ -23,21 +23,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function countCharacters() {
-    //Twitter character limit for reference
-    const MAX_COUNTER = 280;
-
+    
     let numOfCharsEntered = userSpan.innerText.length.toString();
     let spans = document.querySelectorAll("span[name='counter']");
     for (let i = 0; i < spans.length; i++) {
-        if (numOfCharsEntered > MAX_COUNTER) {
-            spans[i].style.color = "red";
+        let darkCSS = document.getElementById("darkCSS");
+        if (darkCSS == null) {
+            spans[i].style.color = "black";
         } else {
-            let darkCSS = document.getElementById("darkCSS");
-            if (darkCSS == null) {
-                spans[i].style.color = "black";
-            } else {
-                spans[i].style.color = "white";
-            }
+            spans[i].style.color = "white";
         }
     }
     charSpan.innerText = numOfCharsEntered;
