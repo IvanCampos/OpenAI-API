@@ -126,6 +126,7 @@ span[name="example"] {
     resize: both;
     min-height: 180px;
     line-height: 30px;
+    margin-bottom: 15px;
     margin-right: 2px;
 }
 
