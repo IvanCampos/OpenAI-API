@@ -128,7 +128,7 @@ async function chatGPT_API_Completions() {
                 body: JSON.stringify({
                     "model": "gpt-3.5-turbo",
                     "messages": messages,
-                    "temperature": 0.9
+                    "temperature": 0
                 })
             });
 
