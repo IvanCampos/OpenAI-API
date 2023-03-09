@@ -236,14 +236,13 @@ function convertEpochToDateTime(epoch) {
     return date.toLocaleString();
 }
 
-function getTimeColor() {
-    let color = "dark";
-    var currentTime = new Date().getHours();
-    if (6 <= currentTime && currentTime < 19) {
-        color = "light";
-    }
-
-    return color;
+function getTimeColor() { 
+    let color = "dark"; 
+    const currentHour = new Date().getHours(); 
+    if (currentHour >= 6 && currentHour < 19) { 
+        color = "light"; 
+    } 
+    return color; 
 }
 
 function getStylesheet() {
