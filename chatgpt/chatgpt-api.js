@@ -31,6 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
     userChar.innerText = MIN_CHARS.toString();
 });
 
+function countCharacters() {
+    countCharactersSystem();
+    countCharactersAssistant();
+    countCharactersUser();
+}
+
 function countCharactersSystem() {
     
     let numOfCharsEntered = systemSpan.innerText.length.toString();
@@ -151,9 +157,7 @@ function clearAll() {
     document.getElementById('system').textContent = '';
     document.getElementById('assistant').textContent = '';
     document.getElementById('user').textContent = '';
-    countCharactersSystem();
-    countCharactersAssistant();
-    countCharactersUser();
+    countCharacters();
     clearResponseAndReceipt();
 }
 

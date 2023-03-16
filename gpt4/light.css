@@ -158,7 +158,7 @@ span[name="counter"] {
     color: black;
 }
 
-#charCount {
+#charCountUser, #charCountSystem, #charCountAssistant {
     font-size: 1.25em;
     font-weight: bold;
     color: black;
