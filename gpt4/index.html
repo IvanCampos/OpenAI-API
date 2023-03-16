@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GPT-4 API Jumpstart</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="dark.css">
+</head>
+<body>
+
+<div id="header">
+    <div class="headerContainer">
+        <div class="headerElementLeft">
+            <span name="lights" title="Light/Dark Mode">
+                <span class="name" onclick="switchStylesheet()">@ivancampos</span>
+            </span>
+        </div>
+        <div class="headerElementCenter"></div>
+        <div id="gh-link" class="headerElementRight" style="text-align: right">
+            <a href="https://github.com/IvanCampos/OpenAI-API" target="_blank">
+                <!-- Image source is set via openai-api.js -->
+                <img id="gh-img" height="25px" width="25px" title="Source Code"/>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div style="display:flex;">
+    <div class="counter">
+        <span>System: </span>
+        <span name="counterSystem" id="charCountSystem"></span>
+    </div>
+    <div class="counter">
+        <span>Assistant: </span>
+        <span name="counterAssistant" id="charCountAssistant"></span>
+    </div>
+    <div class="counter">
+        <span>User: </span>
+        <span name="counterUser" id="charCountUser"></span>
+    </div>
+</div>
+
+<div style="display: flex;">
+    <span id="system" class="systemText" role="textbox" contenteditable></span>
+    <span id="assistant" class="assistantText" role="textbox" contenteditable></span>
+    <span id="user" class="textarea" role="textbox" contenteditable></span>
+</div>
+
+<button name="run" onclick="gpt4_API_Completions();">GPT-4</button>
+<button name="clear" onclick="clearAll()">CLEAR ALL</button>
+
+<div id="response" class="typing"></div>
+<div id="receipt"></div>
+
+<script src="gpt4-api.js"></script>
+
+</body>
+</html>
