@@ -35,6 +35,9 @@ The OpenAI API JavaScript Jumpstart provides an introduction to using the OpenAI
 * Light & Dark Mode styles
 * Text typewriter effect
 
+## GPT-4 Support Added
+* This will only work if your OpenAI Account (API Key) has been invited to use the GPT-4 API
+
 ## Getting Started
 Open jumpstart/openai-api.js and setup your api key with either localStorage or hard-coding: 
 
